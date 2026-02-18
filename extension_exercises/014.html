@@ -1,0 +1,994 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="article:modified_time" content="2025-11-03T17:45:41+01:00" />
+    <title>Live code &#8212; My Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/thebe.css?v=9bca0c2f" />
+    <link rel="stylesheet" type="text/css" href="../_static/code.css?v=1719a5f1" />
+    <link rel="stylesheet" type="text/css" href="../_static/dark_mode_widget.css?v=7446dea4" />
+    <link rel="stylesheet" type="text/css" href="../_static/thebe-button-patch.css?v=e3482d12" />
+    <link rel="stylesheet" type="text/css" href="../_static/image_dark_mode.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/metadata_figure.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_iframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tippy.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tb_cc.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_admonition_style.css?v=8627ce31" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_dropdown_style.css?v=f3461767" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_code_header_style.css?v=7d542921" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_sidebar_scroll.css?v=b9929681" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_margin.css?v=4a1e31aa" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_align_text_captions.css?v=29546296" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_align_code.css?v=719ffd7f" />
+    <link rel="stylesheet" type="text/css" href="../_static/margin_patch.css?v=1aa379b9" />
+    <link rel="stylesheet" type="text/css" href="../_static/mathjax_patch.css?v=b2e2e4cc" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/codex.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/dual_button.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/HighContrast.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/OpenDyslexic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/SVGstyling.css" />
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/viewerjs/dist/viewer.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/viewer_custom.css?v=f07af0ce" />
+    <link rel="stylesheet" type="text/css" href="../_static/attribution.css?v=5843f156" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/dropdown_toggle.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="../_static/download_patch.js?v=75631000"></script>
+    <script src="../_static/fix_hash_jump.js?v=2aad3019"></script>
+    <script src="../_static/mathjax_patch.js?v=c73a562d"></script>
+    <script src="../_static/preserve_dropdown_state.js?v=d724701d"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/h5p-resizer.js"></script>
+    <script>let dualButtonTextual = 'Textual';</script>
+    <script>let dualButtonVisual = 'Visual';</script>
+    <script>let dualButtonTextualText = 'This example also has a textual version. Use the button in the top right corner to switch to the textual version.';</script>
+    <script>let dualButtonVisualText = 'This example also has a visual version. Use the button in the top right corner to switch to the visual version.';</script>
+    <script src="../_static/dual_button.js"></script>
+    <script>let enableFont = 'Enable';</script>
+    <script>let disableFont = 'Disable';</script>
+    <script>let enableContrast = 'Enable high contrast';</script>
+    <script>let disableContrast = 'Disable high contrast';</script>
+    <script src="../_static/Accessibility.js"></script>
+    <script>let thebePythonReady = 'Python interaction ready!';</script>
+    <script>let thebeRunningCells = 'Running pre-initialized cells...';</script>
+    <script>let thebeLoadingThebe = 'Loading Thebe...';</script>
+    <script>let thebeWaitingForPackages = 'Waiting for packages to load...';</script>
+    <script>let thebeLaunchingPyodide = 'Launching Pyodide kernel';</script>
+    <script>let thebeInitializingThebe = 'Initializing Thebe';</script>
+    <script>let thebeDeleteCell = 'delete cell';</script>
+    <script>let thebeDeleteThisCell = 'delete this cell';</script>
+    <script>let thebeClear = 'clear';</script>
+    <script>let thebeClearOutput = 'clear the output of the cell';</script>
+    <script>let thebeAddCell = 'add cell';</script>
+    <script>let thebeAddNewCell = 'adds a new cell underneath';</script>
+    <script>let thebeLaunchingBinder = 'Launching from mybinder.org';</script>
+    <script>let thebeLoadingCDN = 'Loading thebe from CDN...';</script>
+    <script>let thebeRun = 'run';</script>
+    <script>let thebeRunCell = 'run this cell';</script>
+    <script>let thebeRunAll = 'run all';</script>
+    <script>let thebeRunAllCells = 'run all cells';</script>
+    <script>let thebeRestartRun = 'restart & run all';</script>
+    <script>let thebeRestartRunCells = 'restart the kernel and run all cells';</script>
+    <script>let thebeLiveCode = 'Live Code';</script>
+    <script>let thebeLaunchThebe = 'Launch Thebe';</script>
+    <script src="../_static/sphinx-thebe-i18n.js?v=ea266e56"></script>
+    <script defer="defer" src="../_static/refresh.js?v=9bea9b76"></script>
+    <script>const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script defer="defer" src="../_static/sphinx-thebe-lite.js?v=93e2d225"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>let dualButtonTextual = 'Textual';</script>
+    <script>let dualButtonVisual = 'Visual';</script>
+    <script>let dualButtonTextualText = 'This example also has a textual version. Use the button in the top right corner to switch to the textual version.';</script>
+    <script>let dualButtonVisualText = 'This example also has a visual version. Use the button in the top right corner to switch to the visual version.';</script>
+    <script>let enableFont = 'Enable';</script>
+    <script>let disableFont = 'Disable';</script>
+    <script>let enableContrast = 'Enable high contrast';</script>
+    <script>let disableContrast = 'Disable high contrast';</script>
+    <script>let thebePythonReady = 'Python interaction ready!';</script>
+    <script>let thebeRunningCells = 'Running pre-initialized cells...';</script>
+    <script>let thebeLoadingThebe = 'Loading Thebe...';</script>
+    <script>let thebeWaitingForPackages = 'Waiting for packages to load...';</script>
+    <script>let thebeLaunchingPyodide = 'Launching Pyodide kernel';</script>
+    <script>let thebeInitializingThebe = 'Initializing Thebe';</script>
+    <script>let thebeDeleteCell = 'delete cell';</script>
+    <script>let thebeDeleteThisCell = 'delete this cell';</script>
+    <script>let thebeClear = 'clear';</script>
+    <script>let thebeClearOutput = 'clear the output of the cell';</script>
+    <script>let thebeAddCell = 'add cell';</script>
+    <script>let thebeAddNewCell = 'adds a new cell underneath';</script>
+    <script>let thebeLaunchingBinder = 'Launching from mybinder.org';</script>
+    <script>let thebeLoadingCDN = 'Loading thebe from CDN...';</script>
+    <script>let thebeRun = 'run';</script>
+    <script>let thebeRunCell = 'run this cell';</script>
+    <script>let thebeRunAll = 'run all';</script>
+    <script>let thebeRunAllCells = 'run all cells';</script>
+    <script>let thebeRestartRun = 'restart & run all';</script>
+    <script>let thebeRestartRunCells = 'restart the kernel and run all cells';</script>
+    <script>let thebeLiveCode = 'Live Code';</script>
+    <script>let thebeLaunchThebe = 'Launch Thebe';</script>
+    <script>const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script defer="defer" src="../_static/tippy/extension_exercises/014.06ff24ca-3b70-4ba8-8246-66db439c49cc.js"></script>
+    <script>window.MathJax = {"chtml": {"mtextInheritFont": true}, "loader": {"load": ["ui/lazy"]}, "tex": {"macros": {"black": ["\\class{black}{#1}", 1], "silver": ["\\class{silver}{#1}", 1], "gray": ["\\class{gray}{#1}", 1], "white": ["\\class{white}{#1}", 1], "maroon": ["\\class{maroon}{#1}", 1], "red": ["\\class{red}{#1}", 1], "purple": ["\\class{purple}{#1}", 1], "fuchsia": ["\\class{fuchsia}{#1}", 1], "green": ["\\class{green}{#1}", 1], "lime": ["\\class{lime}{#1}", 1], "olive": ["\\class{olive}{#1}", 1], "yellow": ["\\class{yellow}{#1}", 1], "navy": ["\\class{navy}{#1}", 1], "blue": ["\\class{blue}{#1}", 1], "teal": ["\\class{teal}{#1}", 1], "aqua": ["\\class{aqua}{#1}", 1], "aliceblue": ["\\class{aliceblue}{#1}", 1], "antiquewhite": ["\\class{antiquewhite}{#1}", 1], "aquamarine": ["\\class{aquamarine}{#1}", 1], "azure": ["\\class{azure}{#1}", 1], "beige": ["\\class{beige}{#1}", 1], "bisque": ["\\class{bisque}{#1}", 1], "blanchedalmond": ["\\class{blanchedalmond}{#1}", 1], "blueviolet": ["\\class{blueviolet}{#1}", 1], "brown": ["\\class{brown}{#1}", 1], "burlywood": ["\\class{burlywood}{#1}", 1], "cadetblue": ["\\class{cadetblue}{#1}", 1], "chartreuse": ["\\class{chartreuse}{#1}", 1], "chocolate": ["\\class{chocolate}{#1}", 1], "coral": ["\\class{coral}{#1}", 1], "cornflowerblue": ["\\class{cornflowerblue}{#1}", 1], "cornsilk": ["\\class{cornsilk}{#1}", 1], "crimson": ["\\class{crimson}{#1}", 1], "cyan": ["\\class{cyan}{#1}", 1], "darkblue": ["\\class{darkblue}{#1}", 1], "darkcyan": ["\\class{darkcyan}{#1}", 1], "darkgoldenrod": ["\\class{darkgoldenrod}{#1}", 1], "darkgray": ["\\class{darkgray}{#1}", 1], "darkgreen": ["\\class{darkgreen}{#1}", 1], "darkgrey": ["\\class{darkgrey}{#1}", 1], "darkkhaki": ["\\class{darkkhaki}{#1}", 1], "darkmagenta": ["\\class{darkmagenta}{#1}", 1], "darkolivegreen": ["\\class{darkolivegreen}{#1}", 1], "darkorange": ["\\class{darkorange}{#1}", 1], "darkorchid": ["\\class{darkorchid}{#1}", 1], "darkred": ["\\class{darkred}{#1}", 1], "darksalmon": ["\\class{darksalmon}{#1}", 1], "darkseagreen": ["\\class{darkseagreen}{#1}", 1], "darkslateblue": ["\\class{darkslateblue}{#1}", 1], "darkslategray": ["\\class{darkslategray}{#1}", 1], "darkslategrey": ["\\class{darkslategrey}{#1}", 1], "darkturquoise": ["\\class{darkturquoise}{#1}", 1], "darkviolet": ["\\class{darkviolet}{#1}", 1], "deeppink": ["\\class{deeppink}{#1}", 1], "deepskyblue": ["\\class{deepskyblue}{#1}", 1], "dimgray": ["\\class{dimgray}{#1}", 1], "dimgrey": ["\\class{dimgrey}{#1}", 1], "dodgerblue": ["\\class{dodgerblue}{#1}", 1], "firebrick": ["\\class{firebrick}{#1}", 1], "floralwhite": ["\\class{floralwhite}{#1}", 1], "forestgreen": ["\\class{forestgreen}{#1}", 1], "gainsboro": ["\\class{gainsboro}{#1}", 1], "ghostwhite": ["\\class{ghostwhite}{#1}", 1], "gold": ["\\class{gold}{#1}", 1], "goldenrod": ["\\class{goldenrod}{#1}", 1], "greenyellow": ["\\class{greenyellow}{#1}", 1], "grey": ["\\class{grey}{#1}", 1], "honeydew": ["\\class{honeydew}{#1}", 1], "hotpink": ["\\class{hotpink}{#1}", 1], "indianred": ["\\class{indianred}{#1}", 1], "indigo": ["\\class{indigo}{#1}", 1], "ivory": ["\\class{ivory}{#1}", 1], "khaki": ["\\class{khaki}{#1}", 1], "lavender": ["\\class{lavender}{#1}", 1], "lavenderblush": ["\\class{lavenderblush}{#1}", 1], "lawngreen": ["\\class{lawngreen}{#1}", 1], "lemonchiffon": ["\\class{lemonchiffon}{#1}", 1], "lightblue": ["\\class{lightblue}{#1}", 1], "lightcoral": ["\\class{lightcoral}{#1}", 1], "lightcyan": ["\\class{lightcyan}{#1}", 1], "lightgoldenrodyellow": ["\\class{lightgoldenrodyellow}{#1}", 1], "lightgray": ["\\class{lightgray}{#1}", 1], "lightgreen": ["\\class{lightgreen}{#1}", 1], "lightgrey": ["\\class{lightgrey}{#1}", 1], "lightpink": ["\\class{lightpink}{#1}", 1], "lightsalmon": ["\\class{lightsalmon}{#1}", 1], "lightseagreen": ["\\class{lightseagreen}{#1}", 1], "lightskyblue": ["\\class{lightskyblue}{#1}", 1], "lightslategray": ["\\class{lightslategray}{#1}", 1], "lightslategrey": ["\\class{lightslategrey}{#1}", 1], "lightsteelblue": ["\\class{lightsteelblue}{#1}", 1], "lightyellow": ["\\class{lightyellow}{#1}", 1], "limegreen": ["\\class{limegreen}{#1}", 1], "linen": ["\\class{linen}{#1}", 1], "magenta": ["\\class{magenta}{#1}", 1], "mediumaquamarine": ["\\class{mediumaquamarine}{#1}", 1], "mediumblue": ["\\class{mediumblue}{#1}", 1], "mediumorchid": ["\\class{mediumorchid}{#1}", 1], "mediumpurple": ["\\class{mediumpurple}{#1}", 1], "mediumseagreen": ["\\class{mediumseagreen}{#1}", 1], "mediumslateblue": ["\\class{mediumslateblue}{#1}", 1], "mediumspringgreen": ["\\class{mediumspringgreen}{#1}", 1], "mediumturquoise": ["\\class{mediumturquoise}{#1}", 1], "mediumvioletred": ["\\class{mediumvioletred}{#1}", 1], "midnightblue": ["\\class{midnightblue}{#1}", 1], "mintcream": ["\\class{mintcream}{#1}", 1], "mistyrose": ["\\class{mistyrose}{#1}", 1], "moccasin": ["\\class{moccasin}{#1}", 1], "navajowhite": ["\\class{navajowhite}{#1}", 1], "oldlace": ["\\class{oldlace}{#1}", 1], "olivedrab": ["\\class{olivedrab}{#1}", 1], "orange": ["\\class{orange}{#1}", 1], "orangered": ["\\class{orangered}{#1}", 1], "orchid": ["\\class{orchid}{#1}", 1], "palegoldenrod": ["\\class{palegoldenrod}{#1}", 1], "palegreen": ["\\class{palegreen}{#1}", 1], "paleturquoise": ["\\class{paleturquoise}{#1}", 1], "palevioletred": ["\\class{palevioletred}{#1}", 1], "papayawhip": ["\\class{papayawhip}{#1}", 1], "peachpuff": ["\\class{peachpuff}{#1}", 1], "peru": ["\\class{peru}{#1}", 1], "pink": ["\\class{pink}{#1}", 1], "plum": ["\\class{plum}{#1}", 1], "powderblue": ["\\class{powderblue}{#1}", 1], "rebeccapurple": ["\\class{rebeccapurple}{#1}", 1], "rosybrown": ["\\class{rosybrown}{#1}", 1], "royalblue": ["\\class{royalblue}{#1}", 1], "saddlebrown": ["\\class{saddlebrown}{#1}", 1], "salmon": ["\\class{salmon}{#1}", 1], "sandybrown": ["\\class{sandybrown}{#1}", 1], "seagreen": ["\\class{seagreen}{#1}", 1], "seashell": ["\\class{seashell}{#1}", 1], "sienna": ["\\class{sienna}{#1}", 1], "skyblue": ["\\class{skyblue}{#1}", 1], "slateblue": ["\\class{slateblue}{#1}", 1], "slategray": ["\\class{slategray}{#1}", 1], "slategrey": ["\\class{slategrey}{#1}", 1], "snow": ["\\class{snow}{#1}", 1], "springgreen": ["\\class{springgreen}{#1}", 1], "steelblue": ["\\class{steelblue}{#1}", 1], "thistle": ["\\class{thistle}{#1}", 1], "tomato": ["\\class{tomato}{#1}", 1], "turquoise": ["\\class{turquoise}{#1}", 1], "violet": ["\\class{violet}{#1}", 1], "wheat": ["\\class{wheat}{#1}", 1], "whitesmoke": ["\\class{whitesmoke}{#1}", 1], "yellowgreen": ["\\class{yellowgreen}{#1}", 1], "attributiongrey": ["\\class{attributiongrey}{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="../_static/mathjax_patch.js?v=c73a562d"></script>
+    <script src="https://unpkg.com/viewerjs/dist/viewer.min.js"></script>
+    <script>window.ViewerConfig = {"selector": ".bd-article img", "toolbar": ["zoomIn", "zoomOut", "oneToOne", "reset"], "bestFit": 70};</script>
+    <script>const style = document.createElement('style'); style.textContent = `
+    :root {
+        --zoomies-bg-color: rgba(255, 255, 255, 0.95);
+        --zoomies-caption-color: var(--pst-color-text-base);
+        --zoomies-img-bg: rgba(255, 255, 255, 0.95);
+        --zoomies-backdrop-bg: rgba(0, 0, 0, 0.75);
+        --zoomies-img-padding: 15px;
+        --zoomies-img-rounded: 8px;
+    }
+
+    /* Robust dark mode detection */
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --zoomies-bg-color: #333;
+            --zoomies-caption-color: var(--pst-color-text-base);
+            --zoomies-img-bg: rgba(255, 255, 255, 0.95);
+            --zoomies-backdrop-bg: rgba(0, 0, 0, 0.85);
+        }
+    }
+
+    html[data-theme="dark"], body[data-theme="dark"], [data-theme="dark"], .theme-dark, .dark {
+        --zoomies-bg-color: #333 !important;
+        --zoomies-caption-color: var(--pst-color-text-base) !important;
+        --zoomies-img-bg: rgba(255, 255, 255, 0.95) !important;
+        --zoomies-backdrop-bg: rgba(0, 0, 0, 0.85) !important;
+    }
+
+    html[data-theme="light"], body[data-theme="light"], [data-theme="light"], .theme-light, .light {
+        --zoomies-bg-color: rgba(255, 255, 255, 0.95) !important;
+        --zoomies-caption-color: var(--pst-color-text-base) !important;
+        --zoomies-img-bg: rgba(255, 255, 255, 0.95) !important;
+        --zoomies-backdrop-bg: rgba(0, 0, 0, 0.75) !important;
+    }
+    
+    /* Hide scrollbar for primary and secondary sidebars */
+    .bd-sidebar-primary,
+    .bd-sidebar-secondary {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+        overflow-y: auto !important; /* Keep it scrollable but hide the bar */
+    }
+
+    .bd-sidebar-primary::-webkit-scrollbar,
+    .bd-sidebar-secondary::-webkit-scrollbar {
+        display: none; /* Chrome, Safari and Opera */
+    }
+
+    /* Global image inversion in dark mode */
+    html[data-theme="dark"] img, 
+    html[data-theme="dark"] .cell_output img, 
+    html[data-theme="dark"] .rendered_html img {
+        filter: invert(1) hue-rotate(180deg) !important;
+        mix-blend-mode: normal !important; 
+        isolation: isolate;
+        background-color: transparent !important;
+    }
+
+    /* Specific override for the Viewer.js image to allow its background to be inverted correctly */
+    html[data-theme="dark"] .viewer-canvas img {
+        background-color: rgba(255, 255, 255, 0.95) !important;
+    }
+    `; document.head.appendChild(style);</script>
+    <script src="../_static/viewer_custom.js?v=3f26c593"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'extension_exercises/014';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://&lt;user/org&gt;.io/&lt;repo&gt;/extension_exercises/014.html" />
+    <link rel="icon" href="../_static/TB_favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Deploy Book Workflow" href="015.html" />
+    <link rel="prev" title="TeachBooks Favourites" href="017.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="November 3, 2025"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/TeachBooks_logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../_static/TeachBooks_logo_inverted.svg" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">Template</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part with some content</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../some_content/overview.html">Some content</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../some_content/text_and_code.html">Text and code</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../exercises.html">Exercises TeachBooks workflow</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/001.html">Exercise 1: First file edit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/002.html">Exercise 2: Add a new file to the table of contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/003.html">Exercise 3: Change book configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/004.html">Exercise 4: <em>Your</em> Version of the Book</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/005.html">Exercise 5: Merge your version in the original book</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/005a.html">Exercise 6: Reuse content from another book</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/006.html">Exercise 7: Contribute to the book of somebody else</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/summary.html">Summary of exercises: All Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../syntax_exercises.html">Syntax exercises</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../syntax_exercises/007.html">File structure by titles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../syntax_exercises/008.html">Add visual media</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../syntax_exercises/009.html">Use equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../syntax_exercises/010.html">Create tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../syntax_exercises/011.html">Cross-referencing content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../syntax_exercises/012.html">Use admonitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../syntax_exercises/013.html">Adding a Bibliography</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../extensions.html">Extension exercises</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../exercises/007.html">Add extensions to your book</a></li>
+<li class="toctree-l2"><a class="reference internal" href="017.html">TeachBooks Favourites</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Live code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="015.html">Deploy Book Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="016.html">Image and Iframe Dark Mode Colour Inverter</a></li>
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../credits.html">Credits and License</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/user/repo" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/user/repo/edit/main/book/extension_exercises/014.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/user/repo/issues/new?title=Issue%20on%20page%20%2Fextension_exercises/014.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/extension_exercises/014.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Live code</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#available-custom-tags">Available custom tags</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-notebook">Creating a notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trying-the-custom-tags">Trying the custom tags</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disable-execution-cell"><code class="docutils literal notranslate"><span class="pre">disable-execution-cell</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disable-execution-page"><code class="docutils literal notranslate"><span class="pre">disable-execution-page</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auto-execute-page"><code class="docutils literal notranslate"><span class="pre">auto-execute-page</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thebe-init"><code class="docutils literal notranslate"><span class="pre">thebe-init</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thebe-remove-input-init"><code class="docutils literal notranslate"><span class="pre">thebe-remove-input-init</span></code></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="live-code">
+<h1>Live code<a class="headerlink" href="#live-code" title="Link to this heading">#</a></h1>
+<p>With live coding you can make your pages more interactive by adding live, executable code cells. This extension is already part of your TeachBooks book if you started from the template. If not, you can follow instructions <a class="reference external" href="https://teachbooks.io/manual/features/live_code.html#setting-up-python-live-coding">in the manual</a> to enable it. The template also includes a sample page with live code enabled, which you can find <a class="reference external" href="https://teachbooks.io/template/some_content/text_and_code.html">here for the website of the original template</a></p>
+<p>With live code enabled, readers can run snippets directly in the browser, experiment with examples, and complete exercises in real time. This section will guide you through some of the main features available: additional cell tags have been developed that can be added to Python code cells in your book. These tags extend the <a class="reference external" href="https://jupyterbook.org/en/stable/content/metadata.html">existing Jupyter Book v1 tags</a> and allow you to control how cells behave when live execution is enabled.</p>
+<aside class="topic">
+<p class="topic-title">Exercise objective</p>
+<p>Can you apply custom cell tags to control the execution and visibility of code cells?</p>
+</aside>
+<section id="available-custom-tags">
+<h2>Available custom tags<a class="headerlink" href="#available-custom-tags" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">disable-execution-cell</span></code> disables the ability to execute the cell when live code is activated. This is useful if your notebook includes interactivity for only part of the cells.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">disable-execution-page</span></code> disables the ability to execute the entire page. This can be helpful if Python code is used to build a page but is not meant to be run by readers.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">auto-execute-page</span></code> automatically starts live coding when the page is opened, useful if you are using widgets.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">thebe-init</span></code> runs this cell automatically as soon as live coding starts.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">thebe-remove-input-init</span></code> is similar to <code class="docutils literal notranslate"><span class="pre">thebe-init</span></code> but hides the input from students while still executing it. (The regular <code class="docutils literal notranslate"><span class="pre">remove-input</span></code> tag will not work here, since it deletes the entire cell.)</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Tags are case-sensitive. Use lowercase and match them exactly as shown above.</p>
+</div>
+</section>
+<section id="creating-a-notebook">
+<h2>Creating a notebook<a class="headerlink" href="#creating-a-notebook" title="Link to this heading">#</a></h2>
+<p>There are two ways you can try this exercise, depending on whether you have an IDE installed. If you don’t know what an IDE is, or don’t have one installed, follow Option 2 below.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Option 1: Using JupyterLab or VS Code (if installed)</label><div class="sd-tab-content docutils">
+<ol class="arabic simple">
+<li><p>In your repository, create a new notebook file in your book directory, e.g. <code class="docutils literal notranslate"><span class="pre">book/live_code_tags.ipynb</span></code>.</p></li>
+<li><p>To add a new code cell, use <code class="docutils literal notranslate"><span class="pre">python</span></code> and enter a simple code, for example:</p></li>
+</ol>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="sb">```python</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world!&quot;</span><span class="p">)</span>
+<span class="sb">```</span>
+</pre></div>
+</div>
+<p>With this setup, tags can be added by opening the cell metadata (in JupyterLab or Jupyter Notebook: <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">→</span> <span class="pre">Cell</span> <span class="pre">Toolbar</span> <span class="pre">→</span> <span class="pre">Tags</span></code>).</p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Option 2: Using Jupytext in Markdown</label><div class="sd-tab-content docutils">
+<ol class="arabic simple">
+<li><p>If you don’t have JupyterLab or VS Code installed, you can still add code in a markdown file. To make sure this is recognized as an interactive code cell, you need to add a Jupytext header. At the very top of your file (e.g. <code class="docutils literal notranslate"><span class="pre">book/live_code_tags.md</span></code>), add:</p></li>
+</ol>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="nt">jupytext</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">text_representation</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">extension</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.md</span>
+<span class="w">    </span><span class="nt">format_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myst</span>
+<span class="w">    </span><span class="nt">format_version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.13</span>
+<span class="w">    </span><span class="nt">jupytext_version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.17.3</span>
+<span class="nt">kernelspec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">display_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">base</span>
+<span class="w">  </span><span class="nt">language</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python3</span>
+<span class="nn">---</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Now you can insert executable code cells like this:</p></li>
+</ol>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{code-cell} ipython3
+print(&quot;Hello world!&quot;)
+```
+</pre></div>
+</div>
+<p>With this setup, tags can be added directly into the code cell using <code class="docutils literal notranslate"><span class="pre">:tags:</span></code>, for example:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{code-cell} ipython3
+:tags: [&quot;hide-cell&quot;]
+print(&quot;Hello world!&quot;)
+```
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="trying-the-custom-tags">
+<h2>Trying the custom tags<a class="headerlink" href="#trying-the-custom-tags" title="Link to this heading">#</a></h2>
+<p>Now that you know how to create executable code cells, let’s explore the different custom tags available and see examples of how each one can control the behavior of your code when live execution is enabled.</p>
+<section id="disable-execution-cell">
+<h3><code class="docutils literal notranslate"><span class="pre">disable-execution-cell</span></code><a class="headerlink" href="#disable-execution-cell" title="Link to this heading">#</a></h3>
+<ol class="arabic simple" start="3">
+<li><p>This tag is useful when you want a particular code cell to display content without being executed by readers. For example, let’s set up a new cell that prints the current date and time only once:</p></li>
+</ol>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Option 1: Using JupyterLab or VS Code</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+
+<span class="c1"># This prints the current date and time once</span>
+<span class="n">current_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This notebook was last updated at:&quot;</span><span class="p">,</span> <span class="n">current_time</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><em>Remember to add the tag <code class="docutils literal notranslate"><span class="pre">disable-execution-cell</span></code> locally via the cell metadata (<code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">→</span> <span class="pre">Cell</span> <span class="pre">Toolbar</span> <span class="pre">→</span> <span class="pre">Tags</span></code>).</em></p>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+Option 2: Using Jupytext in Markdown</label><div class="sd-tab-content docutils">
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{code-cell} ipython3
+:tags: [&quot;disable-execution-cell&quot;]
+
+import datetime
+
+<span class="gh"># This prints the current date and time once</span>
+current_time = datetime.datetime.now()
+print(&quot;This notebook was last updated at:&quot;, current_time)
+```
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Commit and rebuild your book and visit the page — notice that this particular cell can no longer be run when live code is activated.</p></li>
+</ol>
+</section>
+<section id="disable-execution-page">
+<h3><code class="docutils literal notranslate"><span class="pre">disable-execution-page</span></code><a class="headerlink" href="#disable-execution-page" title="Link to this heading">#</a></h3>
+<ol class="arabic simple" start="5">
+<li><p>This tag is useful when you want all code cells on a page to be non-executable. This is handy if the code is used to build the page or provide context, but you don’t want readers to run it themselves. Add the tag <code class="docutils literal notranslate"><span class="pre">disable-execution-page</span></code> to any of the code cells in your file.</p></li>
+<li><p>Commit and rebuild your book and visit the page — none of the cells should be executable now.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Remove this tag again before continuing, otherwise the next tags won’t have any effect.</p>
+</div>
+</section>
+<section id="auto-execute-page">
+<h3><code class="docutils literal notranslate"><span class="pre">auto-execute-page</span></code><a class="headerlink" href="#auto-execute-page" title="Link to this heading">#</a></h3>
+<ol class="arabic simple" start="7">
+<li><p>This tag is useful when you want live code to start running automatically as soon as the page is opened. This is particularly helpful when using visualizations or interactive widgets that should initialize immediately. For example, let’s set up a plot:</p></li>
+</ol>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+Option 1: Using JupyterLab or VS Code</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Sine wave&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><em>Remember to add the tag <code class="docutils literal notranslate"><span class="pre">auto-execute-page</span></code> to one of the cells via the cell metadata (<code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">→</span> <span class="pre">Cell</span> <span class="pre">Toolbar</span> <span class="pre">→</span> <span class="pre">Tags</span></code>).</em></p>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+Option 2: Using Jupytext in Markdown</label><div class="sd-tab-content docutils">
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{code-cell} ipython3
+:tags: [&quot;auto-execute-page&quot;]
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+
+plt.plot(x, y)
+plt.title(&quot;Sine wave&quot;)
+plt.show()
+```
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="8">
+<li><p>Commit and rebuild your book and visit the page — the plot should appear automatically without needing to click the “launch” button.</p></li>
+</ol>
+</section>
+<section id="thebe-init">
+<h3><code class="docutils literal notranslate"><span class="pre">thebe-init</span></code><a class="headerlink" href="#thebe-init" title="Link to this heading">#</a></h3>
+<ol class="arabic simple" start="9">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">thebe-init</span></code> tag is useful when you want a specific cell to run automatically as soon as live coding starts. This is especially helpful for initializing variables that other cells depend on. For example, let’s initialize a dataset of student names and their scores:</p></li>
+</ol>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
+Option 1: Using JupyterLab or VS Code</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize dataset</span>
+<span class="n">students</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="s2">&quot;Diana&quot;</span><span class="p">]</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">90</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Initialized dataset with students and scores&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><em>Remember to add the tag <code class="docutils literal notranslate"><span class="pre">thebe-init</span></code> locally via the cell metadata (<code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">→</span> <span class="pre">Cell</span> <span class="pre">Toolbar</span> <span class="pre">→</span> <span class="pre">Tags</span></code>).</em></p>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
+Option 2: Using Jupytext in Markdown</label><div class="sd-tab-content docutils">
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{code-cell} ipython3
+:tags: [&quot;thebe-init&quot;]
+
+<span class="gh"># Initialize dataset</span>
+students = [&quot;Alice&quot;, &quot;Bob&quot;, &quot;Charlie&quot;, &quot;Diana&quot;]
+scores = [85, 92, 78, 90]
+
+print(&quot;Initialized dataset with students and scores&quot;)
+```
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="10">
+<li><p>Commit and rebuild your book and visit the page — as soon as live code starts, this cell will run by itself.</p></li>
+</ol>
+</section>
+<section id="thebe-remove-input-init">
+<h3><code class="docutils literal notranslate"><span class="pre">thebe-remove-input-init</span></code><a class="headerlink" href="#thebe-remove-input-init" title="Link to this heading">#</a></h3>
+<ol class="arabic simple" start="11">
+<li><p>This tag works similarly to <code class="docutils literal notranslate"><span class="pre">thebe-init</span></code>, but the input (code) is hidden from students, so they only see the output. This is useful when you want to initialize variables or datasets without showing implementation details. To try this, simply replace the previous tag <code class="docutils literal notranslate"><span class="pre">thebe-init</span></code> with <code class="docutils literal notranslate"><span class="pre">thebe-remove-input-init</span></code> in the same cell from the previous example.</p></li>
+<li><p>Commit and rebuild your book and visit the page — the cell will run automatically, but students will only see the output, not the code.</p></li>
+<li><p>When you are ready, commit your changes to the repository by clicking on the green <code class="docutils literal notranslate"><span class="pre">Commit</span> <span class="pre">changes</span></code> button.</p></li>
+<li><p>Add a commit message.</p></li>
+<li><p>To see your changes, go to <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm4.879-2.773 4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559V5.442a.25.25 0 0 1 .379-.215Z"></path></svg> <code class="docutils literal notranslate"><span class="pre">Actions</span></code> - The most recent workflow run <code class="docutils literal notranslate"><span class="pre">overview.md</span> <span class="pre">/</span> <span class="pre">the</span> <span class="pre">commit</span> <span class="pre">message</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">commit</span> <span class="pre">you</span> <span class="pre">just</span> <span class="pre">made</span></code> - Wait for it to finish - In the summary, click on the link of your book shown in the table <code class="docutils literal notranslate"><span class="pre">Branches</span> <span class="pre">deployed</span></code> and under <code class="docutils literal notranslate"><span class="pre">Primary</span> <span class="pre">book</span> <span class="pre">at</span> <span class="pre">root</span></code> (getting bored of waiting? There’ll be exercising on doing this locally which prevents you from waiting).</p></li>
+<li><p>Do you see your change? If you don’t see it click <code class="docutils literal notranslate"><span class="pre">CTRL</span></code>+<code class="docutils literal notranslate"><span class="pre">F5</span></code>/<code class="docutils literal notranslate"><span class="pre">Control</span></code>+<code class="docutils literal notranslate"><span class="pre">F5</span></code>to refresh the page.</p></li>
+</ol>
+<div class="note admonition">
+<p class="admonition-title">Check your understanding</p>
+<p>Before moving on, make sure you understand the following:</p>
+<ul class="simple">
+<li><p>How do you add tags to a code cell in your book?</p></li>
+<li><p>Which tag disables execution for a single cell? For the whole page?</p></li>
+<li><p>Which tag makes a page auto-start live code when opened?</p></li>
+<li><p>What is the difference between <code class="docutils literal notranslate"><span class="pre">thebe-init</span></code> and <code class="docutils literal notranslate"><span class="pre">thebe-remove-input-init</span></code>?</p></li>
+</ul>
+</div>
+</section>
+</section>
+</section>
+
+        <script type="text/x-thebe-config">
+        {
+            "rootPath": "..",
+            "requestKernel": true,
+            "useJupyterLite": true,
+            "useBinder": false,
+            "kernelOptions": {
+                "path": "/"
+            },
+            "codeMirrorConfig": {
+                "theme": "default",
+                "mode": "python"
+            },
+            "mountRestartButton": false,
+            "mountRestartallButton": false
+        }
+        </script>
+        <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="017.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">TeachBooks Favourites</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="015.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Deploy Book Workflow</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#available-custom-tags">Available custom tags</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-notebook">Creating a notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trying-the-custom-tags">Trying the custom tags</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disable-execution-cell"><code class="docutils literal notranslate"><span class="pre">disable-execution-cell</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disable-execution-page"><code class="docutils literal notranslate"><span class="pre">disable-execution-page</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auto-execute-page"><code class="docutils literal notranslate"><span class="pre">auto-execute-page</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thebe-init"><code class="docutils literal notranslate"><span class="pre">thebe-init</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#thebe-remove-input-init"><code class="docutils literal notranslate"><span class="pre">thebe-remove-input-init</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By TeachBooks Team, built with <a href="https://teachbooks.io">TeachBooks</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener noreferrer"">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt=""></a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  Last updated on November 3, 2025.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

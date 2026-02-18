@@ -1,0 +1,906 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="article:modified_time" content="2025-11-03T13:36:54+01:00" />
+    <title>Use equations &#8212; My Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/thebe.css?v=9bca0c2f" />
+    <link rel="stylesheet" type="text/css" href="../_static/code.css?v=1719a5f1" />
+    <link rel="stylesheet" type="text/css" href="../_static/dark_mode_widget.css?v=7446dea4" />
+    <link rel="stylesheet" type="text/css" href="../_static/thebe-button-patch.css?v=e3482d12" />
+    <link rel="stylesheet" type="text/css" href="../_static/image_dark_mode.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/metadata_figure.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_iframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tippy.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tb_cc.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_admonition_style.css?v=8627ce31" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_dropdown_style.css?v=f3461767" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_code_header_style.css?v=7d542921" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_sidebar_scroll.css?v=b9929681" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_margin.css?v=4a1e31aa" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_align_text_captions.css?v=29546296" />
+    <link rel="stylesheet" type="text/css" href="../_static/fix_align_code.css?v=719ffd7f" />
+    <link rel="stylesheet" type="text/css" href="../_static/margin_patch.css?v=1aa379b9" />
+    <link rel="stylesheet" type="text/css" href="../_static/mathjax_patch.css?v=b2e2e4cc" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/codex.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/dual_button.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/HighContrast.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/OpenDyslexic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/SVGstyling.css" />
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/viewerjs/dist/viewer.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/viewer_custom.css?v=f07af0ce" />
+    <link rel="stylesheet" type="text/css" href="../_static/attribution.css?v=5843f156" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/dropdown_toggle.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="../_static/download_patch.js?v=75631000"></script>
+    <script src="../_static/fix_hash_jump.js?v=2aad3019"></script>
+    <script src="../_static/mathjax_patch.js?v=c73a562d"></script>
+    <script src="../_static/preserve_dropdown_state.js?v=d724701d"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/h5p-resizer.js"></script>
+    <script>let dualButtonTextual = 'Textual';</script>
+    <script>let dualButtonVisual = 'Visual';</script>
+    <script>let dualButtonTextualText = 'This example also has a textual version. Use the button in the top right corner to switch to the textual version.';</script>
+    <script>let dualButtonVisualText = 'This example also has a visual version. Use the button in the top right corner to switch to the visual version.';</script>
+    <script src="../_static/dual_button.js"></script>
+    <script>let enableFont = 'Enable';</script>
+    <script>let disableFont = 'Disable';</script>
+    <script>let enableContrast = 'Enable high contrast';</script>
+    <script>let disableContrast = 'Disable high contrast';</script>
+    <script src="../_static/Accessibility.js"></script>
+    <script>let thebePythonReady = 'Python interaction ready!';</script>
+    <script>let thebeRunningCells = 'Running pre-initialized cells...';</script>
+    <script>let thebeLoadingThebe = 'Loading Thebe...';</script>
+    <script>let thebeWaitingForPackages = 'Waiting for packages to load...';</script>
+    <script>let thebeLaunchingPyodide = 'Launching Pyodide kernel';</script>
+    <script>let thebeInitializingThebe = 'Initializing Thebe';</script>
+    <script>let thebeDeleteCell = 'delete cell';</script>
+    <script>let thebeDeleteThisCell = 'delete this cell';</script>
+    <script>let thebeClear = 'clear';</script>
+    <script>let thebeClearOutput = 'clear the output of the cell';</script>
+    <script>let thebeAddCell = 'add cell';</script>
+    <script>let thebeAddNewCell = 'adds a new cell underneath';</script>
+    <script>let thebeLaunchingBinder = 'Launching from mybinder.org';</script>
+    <script>let thebeLoadingCDN = 'Loading thebe from CDN...';</script>
+    <script>let thebeRun = 'run';</script>
+    <script>let thebeRunCell = 'run this cell';</script>
+    <script>let thebeRunAll = 'run all';</script>
+    <script>let thebeRunAllCells = 'run all cells';</script>
+    <script>let thebeRestartRun = 'restart & run all';</script>
+    <script>let thebeRestartRunCells = 'restart the kernel and run all cells';</script>
+    <script>let thebeLiveCode = 'Live Code';</script>
+    <script>let thebeLaunchThebe = 'Launch Thebe';</script>
+    <script src="../_static/sphinx-thebe-i18n.js?v=ea266e56"></script>
+    <script defer="defer" src="../_static/refresh.js?v=9bea9b76"></script>
+    <script>const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script defer="defer" src="../_static/sphinx-thebe-lite.js?v=93e2d225"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>let dualButtonTextual = 'Textual';</script>
+    <script>let dualButtonVisual = 'Visual';</script>
+    <script>let dualButtonTextualText = 'This example also has a textual version. Use the button in the top right corner to switch to the textual version.';</script>
+    <script>let dualButtonVisualText = 'This example also has a visual version. Use the button in the top right corner to switch to the visual version.';</script>
+    <script>let enableFont = 'Enable';</script>
+    <script>let disableFont = 'Disable';</script>
+    <script>let enableContrast = 'Enable high contrast';</script>
+    <script>let disableContrast = 'Disable high contrast';</script>
+    <script>let thebePythonReady = 'Python interaction ready!';</script>
+    <script>let thebeRunningCells = 'Running pre-initialized cells...';</script>
+    <script>let thebeLoadingThebe = 'Loading Thebe...';</script>
+    <script>let thebeWaitingForPackages = 'Waiting for packages to load...';</script>
+    <script>let thebeLaunchingPyodide = 'Launching Pyodide kernel';</script>
+    <script>let thebeInitializingThebe = 'Initializing Thebe';</script>
+    <script>let thebeDeleteCell = 'delete cell';</script>
+    <script>let thebeDeleteThisCell = 'delete this cell';</script>
+    <script>let thebeClear = 'clear';</script>
+    <script>let thebeClearOutput = 'clear the output of the cell';</script>
+    <script>let thebeAddCell = 'add cell';</script>
+    <script>let thebeAddNewCell = 'adds a new cell underneath';</script>
+    <script>let thebeLaunchingBinder = 'Launching from mybinder.org';</script>
+    <script>let thebeLoadingCDN = 'Loading thebe from CDN...';</script>
+    <script>let thebeRun = 'run';</script>
+    <script>let thebeRunCell = 'run this cell';</script>
+    <script>let thebeRunAll = 'run all';</script>
+    <script>let thebeRunAllCells = 'run all cells';</script>
+    <script>let thebeRestartRun = 'restart & run all';</script>
+    <script>let thebeRestartRunCells = 'restart the kernel and run all cells';</script>
+    <script>let thebeLiveCode = 'Live Code';</script>
+    <script>let thebeLaunchThebe = 'Launch Thebe';</script>
+    <script>const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script defer="defer" src="../_static/tippy/syntax_exercises/009.c5dcfb6e-8d1d-4052-8dd7-ee0bac9ce8e1.js"></script>
+    <script>window.MathJax = {"chtml": {"mtextInheritFont": true}, "loader": {"load": ["ui/lazy"]}, "tex": {"macros": {"black": ["\\class{black}{#1}", 1], "silver": ["\\class{silver}{#1}", 1], "gray": ["\\class{gray}{#1}", 1], "white": ["\\class{white}{#1}", 1], "maroon": ["\\class{maroon}{#1}", 1], "red": ["\\class{red}{#1}", 1], "purple": ["\\class{purple}{#1}", 1], "fuchsia": ["\\class{fuchsia}{#1}", 1], "green": ["\\class{green}{#1}", 1], "lime": ["\\class{lime}{#1}", 1], "olive": ["\\class{olive}{#1}", 1], "yellow": ["\\class{yellow}{#1}", 1], "navy": ["\\class{navy}{#1}", 1], "blue": ["\\class{blue}{#1}", 1], "teal": ["\\class{teal}{#1}", 1], "aqua": ["\\class{aqua}{#1}", 1], "aliceblue": ["\\class{aliceblue}{#1}", 1], "antiquewhite": ["\\class{antiquewhite}{#1}", 1], "aquamarine": ["\\class{aquamarine}{#1}", 1], "azure": ["\\class{azure}{#1}", 1], "beige": ["\\class{beige}{#1}", 1], "bisque": ["\\class{bisque}{#1}", 1], "blanchedalmond": ["\\class{blanchedalmond}{#1}", 1], "blueviolet": ["\\class{blueviolet}{#1}", 1], "brown": ["\\class{brown}{#1}", 1], "burlywood": ["\\class{burlywood}{#1}", 1], "cadetblue": ["\\class{cadetblue}{#1}", 1], "chartreuse": ["\\class{chartreuse}{#1}", 1], "chocolate": ["\\class{chocolate}{#1}", 1], "coral": ["\\class{coral}{#1}", 1], "cornflowerblue": ["\\class{cornflowerblue}{#1}", 1], "cornsilk": ["\\class{cornsilk}{#1}", 1], "crimson": ["\\class{crimson}{#1}", 1], "cyan": ["\\class{cyan}{#1}", 1], "darkblue": ["\\class{darkblue}{#1}", 1], "darkcyan": ["\\class{darkcyan}{#1}", 1], "darkgoldenrod": ["\\class{darkgoldenrod}{#1}", 1], "darkgray": ["\\class{darkgray}{#1}", 1], "darkgreen": ["\\class{darkgreen}{#1}", 1], "darkgrey": ["\\class{darkgrey}{#1}", 1], "darkkhaki": ["\\class{darkkhaki}{#1}", 1], "darkmagenta": ["\\class{darkmagenta}{#1}", 1], "darkolivegreen": ["\\class{darkolivegreen}{#1}", 1], "darkorange": ["\\class{darkorange}{#1}", 1], "darkorchid": ["\\class{darkorchid}{#1}", 1], "darkred": ["\\class{darkred}{#1}", 1], "darksalmon": ["\\class{darksalmon}{#1}", 1], "darkseagreen": ["\\class{darkseagreen}{#1}", 1], "darkslateblue": ["\\class{darkslateblue}{#1}", 1], "darkslategray": ["\\class{darkslategray}{#1}", 1], "darkslategrey": ["\\class{darkslategrey}{#1}", 1], "darkturquoise": ["\\class{darkturquoise}{#1}", 1], "darkviolet": ["\\class{darkviolet}{#1}", 1], "deeppink": ["\\class{deeppink}{#1}", 1], "deepskyblue": ["\\class{deepskyblue}{#1}", 1], "dimgray": ["\\class{dimgray}{#1}", 1], "dimgrey": ["\\class{dimgrey}{#1}", 1], "dodgerblue": ["\\class{dodgerblue}{#1}", 1], "firebrick": ["\\class{firebrick}{#1}", 1], "floralwhite": ["\\class{floralwhite}{#1}", 1], "forestgreen": ["\\class{forestgreen}{#1}", 1], "gainsboro": ["\\class{gainsboro}{#1}", 1], "ghostwhite": ["\\class{ghostwhite}{#1}", 1], "gold": ["\\class{gold}{#1}", 1], "goldenrod": ["\\class{goldenrod}{#1}", 1], "greenyellow": ["\\class{greenyellow}{#1}", 1], "grey": ["\\class{grey}{#1}", 1], "honeydew": ["\\class{honeydew}{#1}", 1], "hotpink": ["\\class{hotpink}{#1}", 1], "indianred": ["\\class{indianred}{#1}", 1], "indigo": ["\\class{indigo}{#1}", 1], "ivory": ["\\class{ivory}{#1}", 1], "khaki": ["\\class{khaki}{#1}", 1], "lavender": ["\\class{lavender}{#1}", 1], "lavenderblush": ["\\class{lavenderblush}{#1}", 1], "lawngreen": ["\\class{lawngreen}{#1}", 1], "lemonchiffon": ["\\class{lemonchiffon}{#1}", 1], "lightblue": ["\\class{lightblue}{#1}", 1], "lightcoral": ["\\class{lightcoral}{#1}", 1], "lightcyan": ["\\class{lightcyan}{#1}", 1], "lightgoldenrodyellow": ["\\class{lightgoldenrodyellow}{#1}", 1], "lightgray": ["\\class{lightgray}{#1}", 1], "lightgreen": ["\\class{lightgreen}{#1}", 1], "lightgrey": ["\\class{lightgrey}{#1}", 1], "lightpink": ["\\class{lightpink}{#1}", 1], "lightsalmon": ["\\class{lightsalmon}{#1}", 1], "lightseagreen": ["\\class{lightseagreen}{#1}", 1], "lightskyblue": ["\\class{lightskyblue}{#1}", 1], "lightslategray": ["\\class{lightslategray}{#1}", 1], "lightslategrey": ["\\class{lightslategrey}{#1}", 1], "lightsteelblue": ["\\class{lightsteelblue}{#1}", 1], "lightyellow": ["\\class{lightyellow}{#1}", 1], "limegreen": ["\\class{limegreen}{#1}", 1], "linen": ["\\class{linen}{#1}", 1], "magenta": ["\\class{magenta}{#1}", 1], "mediumaquamarine": ["\\class{mediumaquamarine}{#1}", 1], "mediumblue": ["\\class{mediumblue}{#1}", 1], "mediumorchid": ["\\class{mediumorchid}{#1}", 1], "mediumpurple": ["\\class{mediumpurple}{#1}", 1], "mediumseagreen": ["\\class{mediumseagreen}{#1}", 1], "mediumslateblue": ["\\class{mediumslateblue}{#1}", 1], "mediumspringgreen": ["\\class{mediumspringgreen}{#1}", 1], "mediumturquoise": ["\\class{mediumturquoise}{#1}", 1], "mediumvioletred": ["\\class{mediumvioletred}{#1}", 1], "midnightblue": ["\\class{midnightblue}{#1}", 1], "mintcream": ["\\class{mintcream}{#1}", 1], "mistyrose": ["\\class{mistyrose}{#1}", 1], "moccasin": ["\\class{moccasin}{#1}", 1], "navajowhite": ["\\class{navajowhite}{#1}", 1], "oldlace": ["\\class{oldlace}{#1}", 1], "olivedrab": ["\\class{olivedrab}{#1}", 1], "orange": ["\\class{orange}{#1}", 1], "orangered": ["\\class{orangered}{#1}", 1], "orchid": ["\\class{orchid}{#1}", 1], "palegoldenrod": ["\\class{palegoldenrod}{#1}", 1], "palegreen": ["\\class{palegreen}{#1}", 1], "paleturquoise": ["\\class{paleturquoise}{#1}", 1], "palevioletred": ["\\class{palevioletred}{#1}", 1], "papayawhip": ["\\class{papayawhip}{#1}", 1], "peachpuff": ["\\class{peachpuff}{#1}", 1], "peru": ["\\class{peru}{#1}", 1], "pink": ["\\class{pink}{#1}", 1], "plum": ["\\class{plum}{#1}", 1], "powderblue": ["\\class{powderblue}{#1}", 1], "rebeccapurple": ["\\class{rebeccapurple}{#1}", 1], "rosybrown": ["\\class{rosybrown}{#1}", 1], "royalblue": ["\\class{royalblue}{#1}", 1], "saddlebrown": ["\\class{saddlebrown}{#1}", 1], "salmon": ["\\class{salmon}{#1}", 1], "sandybrown": ["\\class{sandybrown}{#1}", 1], "seagreen": ["\\class{seagreen}{#1}", 1], "seashell": ["\\class{seashell}{#1}", 1], "sienna": ["\\class{sienna}{#1}", 1], "skyblue": ["\\class{skyblue}{#1}", 1], "slateblue": ["\\class{slateblue}{#1}", 1], "slategray": ["\\class{slategray}{#1}", 1], "slategrey": ["\\class{slategrey}{#1}", 1], "snow": ["\\class{snow}{#1}", 1], "springgreen": ["\\class{springgreen}{#1}", 1], "steelblue": ["\\class{steelblue}{#1}", 1], "thistle": ["\\class{thistle}{#1}", 1], "tomato": ["\\class{tomato}{#1}", 1], "turquoise": ["\\class{turquoise}{#1}", 1], "violet": ["\\class{violet}{#1}", 1], "wheat": ["\\class{wheat}{#1}", 1], "whitesmoke": ["\\class{whitesmoke}{#1}", 1], "yellowgreen": ["\\class{yellowgreen}{#1}", 1], "attributiongrey": ["\\class{attributiongrey}{#1}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="../_static/mathjax_patch.js?v=c73a562d"></script>
+    <script src="https://unpkg.com/viewerjs/dist/viewer.min.js"></script>
+    <script>window.ViewerConfig = {"selector": ".bd-article img", "toolbar": ["zoomIn", "zoomOut", "oneToOne", "reset"], "bestFit": 70};</script>
+    <script>const style = document.createElement('style'); style.textContent = `
+    :root {
+        --zoomies-bg-color: rgba(255, 255, 255, 0.95);
+        --zoomies-caption-color: var(--pst-color-text-base);
+        --zoomies-img-bg: rgba(255, 255, 255, 0.95);
+        --zoomies-backdrop-bg: rgba(0, 0, 0, 0.75);
+        --zoomies-img-padding: 15px;
+        --zoomies-img-rounded: 8px;
+    }
+
+    /* Robust dark mode detection */
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --zoomies-bg-color: #333;
+            --zoomies-caption-color: var(--pst-color-text-base);
+            --zoomies-img-bg: rgba(255, 255, 255, 0.95);
+            --zoomies-backdrop-bg: rgba(0, 0, 0, 0.85);
+        }
+    }
+
+    html[data-theme="dark"], body[data-theme="dark"], [data-theme="dark"], .theme-dark, .dark {
+        --zoomies-bg-color: #333 !important;
+        --zoomies-caption-color: var(--pst-color-text-base) !important;
+        --zoomies-img-bg: rgba(255, 255, 255, 0.95) !important;
+        --zoomies-backdrop-bg: rgba(0, 0, 0, 0.85) !important;
+    }
+
+    html[data-theme="light"], body[data-theme="light"], [data-theme="light"], .theme-light, .light {
+        --zoomies-bg-color: rgba(255, 255, 255, 0.95) !important;
+        --zoomies-caption-color: var(--pst-color-text-base) !important;
+        --zoomies-img-bg: rgba(255, 255, 255, 0.95) !important;
+        --zoomies-backdrop-bg: rgba(0, 0, 0, 0.75) !important;
+    }
+    
+    /* Hide scrollbar for primary and secondary sidebars */
+    .bd-sidebar-primary,
+    .bd-sidebar-secondary {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+        overflow-y: auto !important; /* Keep it scrollable but hide the bar */
+    }
+
+    .bd-sidebar-primary::-webkit-scrollbar,
+    .bd-sidebar-secondary::-webkit-scrollbar {
+        display: none; /* Chrome, Safari and Opera */
+    }
+
+    /* Global image inversion in dark mode */
+    html[data-theme="dark"] img, 
+    html[data-theme="dark"] .cell_output img, 
+    html[data-theme="dark"] .rendered_html img {
+        filter: invert(1) hue-rotate(180deg) !important;
+        mix-blend-mode: normal !important; 
+        isolation: isolate;
+        background-color: transparent !important;
+    }
+
+    /* Specific override for the Viewer.js image to allow its background to be inverted correctly */
+    html[data-theme="dark"] .viewer-canvas img {
+        background-color: rgba(255, 255, 255, 0.95) !important;
+    }
+    `; document.head.appendChild(style);</script>
+    <script src="../_static/viewer_custom.js?v=3f26c593"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'syntax_exercises/009';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://&lt;user/org&gt;.io/&lt;repo&gt;/syntax_exercises/009.html" />
+    <link rel="icon" href="../_static/TB_favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Create tables" href="010.html" />
+    <link rel="prev" title="Add visual media" href="008.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="November 3, 2025"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/TeachBooks_logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../_static/TeachBooks_logo_inverted.svg" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">Template</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part with some content</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../some_content/overview.html">Some content</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../some_content/text_and_code.html">Text and code</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../exercises.html">Exercises TeachBooks workflow</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/001.html">Exercise 1: First file edit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/002.html">Exercise 2: Add a new file to the table of contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/003.html">Exercise 3: Change book configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/004.html">Exercise 4: <em>Your</em> Version of the Book</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/005.html">Exercise 5: Merge your version in the original book</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/005a.html">Exercise 6: Reuse content from another book</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/006.html">Exercise 7: Contribute to the book of somebody else</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/summary.html">Summary of exercises: All Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../syntax_exercises.html">Syntax exercises</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="007.html">File structure by titles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="008.html">Add visual media</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Use equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="010.html">Create tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="011.html">Cross-referencing content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="012.html">Use admonitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="013.html">Adding a Bibliography</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../extensions.html">Extension exercises</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../exercises/007.html">Add extensions to your book</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extension_exercises/017.html">TeachBooks Favourites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extension_exercises/014.html">Live code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extension_exercises/015.html">Deploy Book Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extension_exercises/016.html">Image and Iframe Dark Mode Colour Inverter</a></li>
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../credits.html">Credits and License</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/user/repo" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/user/repo/edit/main/book/syntax_exercises/009.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/user/repo/issues/new?title=Issue%20on%20page%20%2Fsyntax_exercises/009.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/syntax_exercises/009.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Use equations</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-equations">Writing equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting-mathematical-symbols">Formatting mathematical symbols</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-colours-to-equations">Adding colours to equations</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="use-equations">
+<h1>Use equations<a class="headerlink" href="#use-equations" title="Link to this heading">#</a></h1>
+<p>In this exercise, you will learn how to write and format mathematical equations in your TeachBook, both inline and as standalone blocks.</p>
+<aside class="topic">
+<p class="topic-title">Exercise objective</p>
+<p>Can you write and format equations correctly in your book?</p>
+</aside>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Using properly formatted equations makes mathematical expressions clearer and more professional. More details can be found in the <a class="reference external" href="https://jupyterbook.org/v1/content/math.html">JupyterBook documentation</a>.</p>
+</div>
+<section id="writing-equations">
+<h2>Writing equations<a class="headerlink" href="#writing-equations" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Open a new or existing Markdown file where you want to include an equation.</p></li>
+<li><p>Start with a simple block equation using double dollar signs. Try adding the following equation in your Markdown file:</p></li>
+</ol>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>$$ F_{res} = m \cdot a $$ 
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The syntax used for creation equations is TeX, a markup language for math. It’s often part of the software-system LaTeX, which allows to create full documents in this language. There’s plenty of documentation online on how to use it, including graphical interfaces (for example <a class="reference external" href="https://latexeditor.lagrida.com/">this one</a>)</p>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Now let’s add another equation with an error:</p></li>
+</ol>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>$$ E = m \ccdot c^2 $$
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Check whether the equations renders correctly by clicking <code class="docutils literal notranslate"><span class="pre">preview</span></code> if you’re making this edit in the GitHub single file editor. Make sure you already defined the file type as <code class="docutils literal notranslate"><span class="pre">&lt;title&gt;.md</span></code> to enable rendering. Note that all ill-formatted equation are indicated in red, i.e. <span class="math notranslate nohighlight">\(\red{\text{\ccdot}}\)</span></p></li>
+<li><p>As an alternative you try and use the ‘math directive’. This will have the same results + adds a equation number which can be used for referencing (refer to <a class="reference internal" href="011.html"><span class="std std-doc">Cross-referencing content</span></a>):</p></li>
+</ol>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{math}
+v = a \cdot t
+```
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Click on <code class="docutils literal notranslate"><span class="pre">preview</span></code> again. Note that these equations don’t render. That’s because these ‘directives’ is a MyST feature (an extension of markdown), which is not supported by the GitHub previewer that only support markdown.</p></li>
+<li><p>Now, add an inline equation by enclosing the equation with single dollar signs. Try this example:</p></li>
+</ol>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>The displacement can be found using the equation $s = v \cdot t$.
+</pre></div>
+</div>
+</section>
+<section id="formatting-mathematical-symbols">
+<h2>Formatting mathematical symbols<a class="headerlink" href="#formatting-mathematical-symbols" title="Link to this heading">#</a></h2>
+<ol class="arabic simple" start="8">
+<li><p>In this step we will experiment with different TeX symbols. Use the following table and test each example in your Markdown file:</p></li>
+</ol>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Script</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Square root</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\sqrt{4}</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Power</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">^{2x}</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Fraction</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\frac{2}{3}</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Subscript</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">_{gem}</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Superscript</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">^{N}</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Multiplication</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\cdot</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol class="arabic simple" start="9">
+<li><p>Extend this exercise by trying more advanced mathematical expressions:</p></li>
+</ol>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Script</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Derivative</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\frac{\Delta</span> <span class="pre">f}{\Delta</span> <span class="pre">t}</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Integral</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\int_a^b</span> <span class="pre">dx</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Sine function</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\sin(x)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol class="arabic simple" start="10">
+<li><p>Test your understanding by adding a new equation of your choice, ideally one that requires many LaTex symbols!</p></li>
+</ol>
+</section>
+<section id="adding-colours-to-equations">
+<h2>Adding colours to equations<a class="headerlink" href="#adding-colours-to-equations" title="Link to this heading">#</a></h2>
+<ol class="arabic simple" start="11">
+<li><p>The TeachBooks template includes the <code class="docutils literal notranslate"><span class="pre">sphinx-named-colors</span></code> extension, which lets you add colours to parts of your equations using LaTeX. Look at the <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/CSS/named-color">CSS named colours</a> to explore the possible colour options.</p></li>
+<li><p>It is also possible to use custom colours! Look <a class="reference external" href="https://teachbooks.io/manual/external/Sphinx-Named-Colors/README.html#">here</a> for documentation about the TeachBook extension which allows custom colours.</p></li>
+<li><p>Colours are added to equations using <code class="docutils literal notranslate"><span class="pre">\namedcolour{...}</span></code>, replacing <code class="docutils literal notranslate"><span class="pre">namedcolour</span></code> with the colour of choice. Test this out with the examples in the table below:</p></li>
+</ol>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Color</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\LaTeX\)</span> Code</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>olive</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\olive{\int_a^bf(x)dx}</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>hotpink</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.\hotpink{\mathbf{49}}</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>darkturquoise</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\dfrac{\darkturquoise{\partial}f}{\darkturquoise{\partial}x}</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol class="arabic simple" start="14">
+<li><p>For colours with hyphens we use need to use the class-based command `\class{named-colour}{…}. Try this using the format shown below:</p></li>
+</ol>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>$$ \class{hyphen-color}{\sum}_{n=1}^\infty $$
+</pre></div>
+</div>
+<ol class="arabic simple" start="15">
+<li><p>Test your understanding by creating a block equation where each term is a different colour!</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This is especially helpful for highlighting changes between equations or focusing attention on specific terms!</p>
+</div>
+<ol class="arabic simple" start="16">
+<li><p>When you are ready, commit your changes to the repository by clicking on the green <code class="docutils literal notranslate"><span class="pre">Commit</span> <span class="pre">changes</span></code> button.</p></li>
+<li><p>Add a commit message.</p></li>
+<li><p>To see your changes, go to <svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm4.879-2.773 4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559V5.442a.25.25 0 0 1 .379-.215Z"></path></svg> <code class="docutils literal notranslate"><span class="pre">Actions</span></code> - The most recent workflow run <code class="docutils literal notranslate"><span class="pre">overview.md</span> <span class="pre">/</span> <span class="pre">the</span> <span class="pre">commit</span> <span class="pre">message</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">commit</span> <span class="pre">you</span> <span class="pre">just</span> <span class="pre">made</span></code> - Wait for it to finish - In the summary, click on the link of your book shown in the table <code class="docutils literal notranslate"><span class="pre">Branches</span> <span class="pre">deployed</span></code> and under <code class="docutils literal notranslate"><span class="pre">Primary</span> <span class="pre">book</span> <span class="pre">at</span> <span class="pre">root</span></code> (getting bored of waiting? There’ll be exercising on doing this locally which prevents you from waiting).</p></li>
+<li><p>Do you see your change? If you don’t see it click <code class="docutils literal notranslate"><span class="pre">CTRL</span></code>+<code class="docutils literal notranslate"><span class="pre">F5</span></code>/<code class="docutils literal notranslate"><span class="pre">Control</span></code>+<code class="docutils literal notranslate"><span class="pre">F5</span></code>to refresh the page.</p></li>
+</ol>
+<div class="note admonition">
+<p class="admonition-title">Check your understanding</p>
+<p>Before moving on to the next exercise, make sure you understand the following:</p>
+<ul class="simple">
+<li><p>What is the difference between inline and block equations?</p></li>
+<li><p>How do you use TeX formatting for different mathematical symbols?</p></li>
+<li><p>What is the purpose of using single vs. double dollar signs for equations?</p></li>
+<li><p>How do you troubleshoot if your equations are not rendering correctly?</p></li>
+</ul>
+</div>
+</section>
+</section>
+
+        <script type="text/x-thebe-config">
+        {
+            "rootPath": "..",
+            "requestKernel": true,
+            "useJupyterLite": true,
+            "useBinder": false,
+            "kernelOptions": {
+                "path": "/"
+            },
+            "codeMirrorConfig": {
+                "theme": "default",
+                "mode": "python"
+            },
+            "mountRestartButton": false,
+            "mountRestartallButton": false
+        }
+        </script>
+        <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="008.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Add visual media</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="010.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Create tables</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-equations">Writing equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting-mathematical-symbols">Formatting mathematical symbols</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-colours-to-equations">Adding colours to equations</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By TeachBooks Team, built with <a href="https://teachbooks.io">TeachBooks</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener noreferrer"">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt=""></a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  Last updated on November 3, 2025.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
