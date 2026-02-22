@@ -102,7 +102,6 @@ sphinx:                                              # Options passed on to the 
     nb_remove_code_source: false                     # Default value (line can be removed), do not remove code cell source, configuration part of Myst-NB (https://myst-nb.readthedocs.io/en/latest/configuration.html)
     nb_remove_code_outputs: false                    # Default value (line can be removed), do not remove code cell outputs, configuration part of Myst-NB (https://myst-nb.readthedocs.io/en/latest/configuration.html)
 
-
 teachbooks:
   attribution_location: top                          # Default value (line can be removed), sets location of attribution admonition of external pages, configuration part of TeachBooks package (https://teachbooks.io/manual/features/external_toc.html)
   attribution_color: attributiongrey                 # Uses custom grey colour for attribution admonition of external pages, configuration part of TeachBooks package (https://teachbooks.io/manual/features/external_toc.html)
